@@ -1,0 +1,56 @@
+{% extends 'doctor/common.html' %}
+{% block header %}
+{% load static %}
+
+<br><br>
+
+<center>
+    <h2><b>View MRI Patients</b></h2><br><br>
+    <table class="table" style="width: 70%;">
+        <thead>
+            <tr>
+                <th>Name </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Phone no
+                </th>
+
+
+                <th>
+                    Result
+                </th>
+
+            </tr>
+        </thead>
+        {% for i in data %}
+        <tbody>
+            <tr>
+                <td>
+                    {{i.5}}
+                </td>
+
+
+                <td>
+                    {{i.6}}
+                </td>
+                <td>
+                    {{i.7}}
+                </td>
+
+                <td>
+
+                    <a href="/viewmriresult/?id={{i.8}}">VIEW RESULT</a>
+                </td>
+                </td>
+
+            </tr>
+
+        </tbody>
+        {% endfor %}
+
+    </table><br><br>
+</center>
+
+{% endblock %}

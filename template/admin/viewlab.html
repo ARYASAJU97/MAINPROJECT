@@ -1,0 +1,51 @@
+{% extends 'admin/common.html' %}
+{% load static %}
+{% block header %}
+<br><br><br>
+<center>
+<h1><b>View Lab</b></h1><br>
+
+    <table class="table" style=" width: 70%; ">
+        <thead>
+            <tr>
+                <th>Name </th>
+                <th>Email</th>
+                <th>Phone no</th>
+                <th>Qualification</th>
+                <th>Remove</th>
+
+            </tr>
+        </thead>
+        {% for i in data %}
+        <tbody>
+            <tr>
+                <td>
+                    {{i.1}}
+                </td>
+
+
+                <td>
+                    {{i.2}}
+                </td>
+                <td>
+                    {{i.3}}
+                </td>
+                <td>
+                    {{i.4}}
+                </td>
+
+
+                <td>
+                    <a href="/removedoctors?id={{i.0}}">REMOVE</a>
+                </td>
+
+            </tr>
+
+        </tbody>
+        {% endfor %}
+
+    </table>
+</center>
+<br><br>
+
+{% endblock %}

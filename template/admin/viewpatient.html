@@ -1,0 +1,46 @@
+{% extends 'admin/common.html' %}
+{% load static %}
+{% block header %}
+<br><br><br>
+<center>
+<h1><b>View Patient</b></h1><br>
+
+<table class="table" style=" width: 70%; ">
+    <thead>
+        <tr>
+            <th>Name </th>
+            <th>Email</th>
+            <th>phoneno</th>
+            <th>qualification</th>
+        </tr>
+    </thead>
+    {% for i in data %}
+    <tbody>
+        <tr>
+            <td>
+                {{i.1}}
+            </td>
+
+
+            <td>
+                {{i.2}}
+            </td>
+            <td>
+                {{i.3}}
+            </td>
+            <td>
+                {{i.4}}
+            </td>
+            <td>
+                {{i.5}}
+            </td>
+        </tr>
+
+    </tbody>
+    {% endfor %}
+
+</table>
+</center>
+<br><br>
+
+{% endblock %}

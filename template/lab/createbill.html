@@ -1,0 +1,29 @@
+{% extends 'lab/common.html' %}
+{% block header %}
+{% load static %}
+
+<section class="contact-form section-padding3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+                <form method="post">
+                    {% csrf_token %} 
+                    <div class="left">
+                        <input type="text" name="considerationbill" placeholder="consideration bill.." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" required>
+                        <input type="text" name="medicinebill" placeholder="medicine bill" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" required>
+                        <input type="text" name="othercharges" placeholder=" other charges.." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter subject'" required>
+                    </div>
+                    <!-- <div class="right">
+                        <textarea name="message" cols="20" rows="7"  placeholder="Enter Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" required></textarea>
+                    </div> -->
+                    <button type="submit" class="template-btn">Register now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% if msg %}
+	<script>alert('your bill is-{{msg}}');</script>
+	{% endif %}
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'lab/common.html' %}
+{% block header %}
+{% load static %}
+<br><br>
+<center>
+<h2><b>View MRI Requests</b></h2><br>
+    <table class="table" style="width: 70%;">
+        <thead>
+            <tr>
+                <th>Patient Name </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Phone Number
+                </th>
+                <th>
+                    Doctor Name
+                </th>
+                <th>
+                    Doctor's Email
+                </th>
+                <th>
+                    Specification
+                </th>
+                <th>
+                    Upload Image
+                </th>
+
+            </tr>
+        </thead>
+        {{d}}
+        {% for d in data %}
+        <tbody>
+            <tr>
+                <td>
+                    {{d.6}}
+                </td>
+                <td>
+                    {{d.7}}
+                </td>
+                <td>
+                    {{d.8}}
+                </td>
+                <td>
+                    {{d.10}}
+                </td>
+                <td>
+                    {{d.11}}
+                </td>
+                <td>
+                    {{d.13}}
+                </td>
+                <td>
+
+                    <a href="/uploadimage/?id={{d.0}}">Upload Image</a>
+                </td>
+
+            </tr>
+
+        </tbody>
+        {% endfor %}
+
+    </table>
+</center>
+<br><br>
+{% endblock %}

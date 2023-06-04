@@ -1,0 +1,42 @@
+{% extends 'common/common.html' %}
+{% load static %}
+{% block header %}
+
+<section class="patient-area section-padding">
+    <div class="container" >
+       <center> <h1><b> Register here</b></h1><br></center>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-lg-5 offset-lg-1 align-self-center">
+                <div class="appointment-form text-center mt-5 mt-lg-0">
+                    <h3 class="mb-5">Register Here</h3>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" name="name" onfocus="this.placeholder = ''"
+                                onblur="this.placeholder = 'Your Name'" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" name="email" onfocus="this.placeholder = ''"
+                                onblur="this.placeholder = 'Your Email'" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="" placeholder="Enter Moblie Number" minlength="10" maxlength="10" pattern="[6789][0-9]{9}" name="phoneno"
+                                onfocus="this.placeholder = ''"  required>
+                        </div>
+                        <!-- <div class="form-group">
+                            <textarea name="message" cols="20" rows="7"  placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'" required></textarea>
+                        </div> -->
+                        <input type="submit" class="template-btn" value="Register Now">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% if msg %}
+<script>alert('your patient ID-{{msg}}');</script>
+{% endif %}
+
+{% endblock %}

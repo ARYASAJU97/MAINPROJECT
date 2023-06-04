@@ -1,0 +1,47 @@
+{% extends 'doctor/common.html' %}
+{% block header %}
+{% load static %}
+
+<br><br><br>
+<center>
+    <h1><b>MRI Results</b></h1><br>
+
+
+    <div class="bs-docs-example">
+        <table class="table" style="width: 70%;">
+            <thead>
+                <tr>
+
+                    <th>Name </th>
+                    <td>{{i.6}}</td>
+                </tr>
+
+                <tr>
+                    <th>
+                        Phone no
+                    </th>
+                    <td>{{i.8}}</td>
+                </tr>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <td>
+                        <img src="../static{{i.4}}">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Action</th>
+                    <td><a href="/clearimage?image={{i.4}}">Clear image</a>
+                    </td>
+                </tr>
+            </thead>
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+    {% endblock %}

@@ -1,0 +1,76 @@
+{% extends 'doctor/common.html' %}
+{% block header %}
+{% load static %}
+<br><br><br>
+<center>
+    <h1><b>Patients</b></h1><br>
+<table class="table" style="width: 70%; text-align: center;">
+    <thead>
+        <tr>
+            <th>Name </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Phone no
+            </th>
+
+
+            <th>
+                REFER
+            </th>
+
+
+        </tr>
+    </thead>
+    {% for i in data %}
+    <tbody>
+        <tr>
+            <td>
+                {{i.5}}
+            </td>
+
+
+            <td>
+                {{i.6}}
+            </td>
+            <td>
+                {{i.7}}
+            </td>
+           
+          
+               <td>
+                <a href="/addreference/?id={{i.1}}">REFER FOR SCANNING</a> </td>
+
+        </tr>
+        {% endfor %}
+
+
+        {% for i in data1 %}
+        <tr>
+            <td>
+                {{i.5}}
+            </td>
+
+
+            <td>
+                {{i.6}}
+            </td>
+            <td>
+                {{i.7}}
+            </td>
+           
+          
+               <td>
+               REFERENCED FOR MRI
+
+        </tr>
+        
+    </tbody>
+    {% endfor %}
+
+</table>
+</center>
+<br><br>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'lab/common.html' %}
+{% block header %}
+{% load static %}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Phone no
+            </th>
+            <th>
+                Doctor
+            </th>
+            <th>
+                specification
+            </th>
+            <th>
+                check prescription
+            </th>
+
+        </tr>
+    </thead>
+    {% for i in data %}
+    <tbody>
+        <tr>
+            <td>
+                {{i.5}}
+            </td>
+
+
+            <td>
+                {{i.6}}
+            </td>
+            <td>
+                {{i.7}}
+            </td>
+            <td>
+                {{i.11}}
+            </td>
+            <td>
+                {{i.12}}
+            </td>
+            <td>
+                <a href="/viewprescription/?id={{i.1}}">check prescription</a>
+            </td>
+
+        </tr>
+
+    </tbody>
+    {% endfor %}
+
+</table>
+
+{% endblock %}

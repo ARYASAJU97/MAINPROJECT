@@ -1,0 +1,41 @@
+{% extends 'common/common.html' %}
+{% load static %}
+{% block header %}
+
+<section class="patient-area section-padding">
+    <div class="container" >
+       <!-- <center> <h1><b> Register here</b></h1><br></center> -->
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-lg-5 offset-lg-1 align-self-center">
+                <div class="appointment-form text-center mt-5 mt-lg-0">
+                    <h3 class="mb-5">Login </h3>
+                    <form method="post">
+                        {% csrf_token %}
+                        <!-- <div class="form-group">
+                            <input type="text" placeholder="Your Name" name="name" onfocus="this.placeholder = ''"
+                                onblur="this.placeholder = 'Your Name'" required>
+                        </div> -->
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" name="email"  required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="" placeholder="Enter Password" name="password"
+                                  required>
+                        </div>
+                        <!-- <div class="form-group">
+                            <textarea name="message" cols="20" rows="7"  placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'" required></textarea>
+                        </div> -->
+                        <input type="submit" class="template-btn" value="Login Now">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% if msg %}
+<script>alert('your patient ID-{{msg}}');</script>
+{% endif %}
+
+{% endblock %}

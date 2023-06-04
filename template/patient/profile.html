@@ -1,0 +1,36 @@
+{% extends 'patient/common.html' %}
+{% block header %}
+{% load static %}
+
+<section class="contact py-5">
+	<div class="container py-md-4 mt-md-3">
+
+		<span class="w3-line black"></span>
+		<div class="inner-sec-w3layouts-agileinfo mt-md-5 pt-5">
+
+
+			<div class="contact_grid_right mt-5">
+				<center>
+					<div class="card" style="height: 500px; width: 300px;">
+						<img src="{% static 'assets/images/usser.png' %}" alt="Avatar" style="width:100%">
+						<div class="container">
+							<h4><b> {{data.1}}</b></h4>
+							<p>Patient Id: {{data.0}}</p>
+							<p>Email Id: {{data.2}}</p>
+							<p>Phone Number: {{data.3}}</p>
+						</div>
+					</div>
+				</center>
+
+			</div>
+		</div>
+	</div>
+</section>
+{% if msg %}
+<script>alert('{{msg}}');</script>
+{% endif %}
+
+
+
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'lab/common.html' %}
+{% block header %}
+{% load static %}
+
+
+
+<section class="contact-form section-padding3">
+    <div class="container">
+        <h2 class="heading-agileinfo">Create Bill<span></span></h2>
+        <div class="row">
+            <div class="col-lg-9">
+                <form method="post">
+                    {% csrf_token %} 
+                    <div class="left">
+                        <input type="text" readonly name="considerationbill" placeholder="consideration bill.." value="consideration bill={{cbill}}" required="">
+                        <input type="text" readonly name="medicinebill" placeholder="medicine bill" value="medicine bill={{mbill}}" required="">
+                        <input type="text" readonly name="othercharges" placeholder=" other charges.." value="other charges={{obill}}" required="">
+                        <input type="text" readonly name="othercharges" placeholder=" total.."  value="total={{total}}" required="">
+                
+                    </div>
+                    <!-- <div class="right">
+                        <textarea name="message" cols="20" rows="7"  placeholder="Enter Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" required></textarea>
+                    </div> -->
+                    <!-- <button type="submit" class="template-btn">Register now</button> -->
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% if msg %}
+	<script>alert('your bill is-{{msg}}');</script>
+	{% endif %}
+
+{% endblock %}
